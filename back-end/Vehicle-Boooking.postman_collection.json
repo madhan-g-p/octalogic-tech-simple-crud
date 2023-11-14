@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "6a2952c7-2c9b-4558-b0ee-26c87ceabeda",
+		"name": "Vehicle-Boooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25403339"
+	},
+	"item": [
+		{
+			"name": "Vehicle Types",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/vehicle-booking/vehicle-types/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-booking",
+						"vehicle-types",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vehicle Models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/vehicle-booking/vehicle-models/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-booking",
+						"vehicle-models",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"test\",\r\n    \"lastName\": \"book\",\r\n    \"modelId\" : 2,\r\n    \"fromDate\": \"2024-01-01\",\r\n    \"toDate\": \"2024-01-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/vehicle-booking/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Booked Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/vehicle-booking/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Vehicle Error case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"new\",\r\n    \"lastName\": \"book\",\r\n    \"modelId\" : 2,\r\n    \"fromDate\": \"2023-12-09\",\r\n    \"toDate\": \"2023-12-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/vehicle-booking/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-booking",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
